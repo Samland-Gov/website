@@ -15,7 +15,7 @@
                 $size = filesize($path);
                 echo("<h1>File `{$name}`</h1>");
                 echo("<p>Type: {$type}. Size: {$size} bytes.<p>");
-                echo("<a download href=\"{$name}\">Download here.</a>");
+                echo("<a href=\"{$name}\">Download here.</a>");
                 if (file_exists($path.".url")) {
                     $url = file_get_contents($path.".url");
                     echo("<br>");
