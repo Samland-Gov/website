@@ -2,19 +2,27 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Samland Government - <?php echo($page);?></title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
-	<body>
-	<h1><u><a href="/">Samland Government</u></a> - <?php echo($page);?></h1>
-		<main>
-		<form action="/search.php" method="GET">
-			<input name="q" id="q">
-			<label for="q">Search</label>
-			<input type="submit">
-		</form>
-		`% yield content %`
-		</main>
+	<body class="content">
+		<h1 class="title"><a href="/">Samland Government</a> - <?php echo($page);?></h1>
+		<div id="main">
+			<nav>
+				<p>Test</p>
+				<p>Test1</p>
+				<p>Test2</p>
+			</nav>
+
+			<main>
+				<div>
+					<form action="/search.php" method="GET">
+						<input name="q" id="q">
+						<input type="submit">
+					</form>
+					`% yield content %`
+				</div>
+			</main>
+		</div>
 	</body>
 </html>

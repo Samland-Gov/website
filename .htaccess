@@ -6,17 +6,17 @@
     Require all denied
 </If>
 
+<If "%{REQUEST_URI} =~ m#^/.git($|/)#">
+    Require all denied
+</If>
+
+
 <FilesMatch "/template.php">
     Order Deny,Allow
     Allow from all
 </FilesMatch>
 
 <FilesMatch "/.gitignore">
-    Order Deny,Allow
-    Allow from all
-</FilesMatch>
-
-<FilesMatch "/.git">
     Order Deny,Allow
     Allow from all
 </FilesMatch>
