@@ -1,12 +1,10 @@
-<FilesMatch "/cache">
-    Order Deny,Allow
-    Allow from all
-</FilesMatch>
+<If "%{REQUEST_URI} =~ m#^/cache($|/)#">
+    Require all denied
+</If>
 
-<FilesMatch "/templates">
-    Order Deny,Allow
-    Allow from all
-</FilesMatch>
+<If "%{REQUEST_URI} =~ m#^/templates($|/)#">
+    Require all denied
+</If>
 
 <FilesMatch "/template.php">
     Order Deny,Allow
