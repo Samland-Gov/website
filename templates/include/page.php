@@ -6,20 +6,22 @@
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body class="content">
-		<h1 class="title"><a href="/">Samland Government</a> - <?php echo($page);?></h1>
+		<header>
+			<h1><a href="/">Samland Government</a> - <?php echo($page);?></h1>
+			<form action="/search.php" method="GET">
+				<input name="q" id="q">
+				<input type="submit" value="Search">
+			</form>
+		</header>
 		<div id="main">
 			<nav>
-				<p>Test</p>
-				<p>Test1</p>
-				<p>Test2</p>
+				<a href="/"><p>Home</p></a>
+				<a href="/search.php?q=regulations"><p>Regulations</p></a>
+				<a href="/search.php?q="><p>All Files</p></a>
 			</nav>
 
 			<main>
 				<div>
-					<form action="/search.php" method="GET">
-						<input name="q" id="q">
-						<input type="submit">
-					</form>
 					`% yield content %`
 				</div>
 			</main>

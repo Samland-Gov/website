@@ -17,14 +17,36 @@ main div{
 	margin: 5px;
 }
 
-.content h1 {
+header {
+	display: flex;
 	background-color: #435165;
+	color: white;
+	text-align: center;
+	align-items: center;
+	height: 5ch;
+	margin: 0;
+	padding: 0;
+}
+
+header a {
+	text-decoration: none;
 	color: white;
 }
 
-.content h1 a {
-	text-decoration: none;
-	color: white;
+header h1 {
+	float: left;
+	width: 50%;
+	flex: 0 1 auto;
+	margin: 0;
+	padding: 0;
+}
+
+header form{
+	float: right;
+	width: 50%;
+	flex: 1 1 auto;
+	margin: 0;
+	padding: 0;
 }
 
 nav {

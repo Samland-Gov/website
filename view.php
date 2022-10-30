@@ -3,8 +3,8 @@
 require( __DIR__."/template.php" );
 require( __DIR__."/config.php" );
 
-Template::view(TEMPLATE_PATH."/search.php", [
+Template::view(TEMPLATE_PATH."/view.php", [
 	'_GET' => $_GET,
 	'root' => $_SERVER["DOCUMENT_ROOT"],
-	'page' => 'Search'
+	'page' => 'View File'
 ]);
