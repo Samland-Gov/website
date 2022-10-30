@@ -1,0 +1,24 @@
+<FilesMatch "/cache">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+
+<FilesMatch "/templates">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+
+<FilesMatch "/template.php">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+
+<FilesMatch "/.gitignore">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+
+<FilesMatch "/.git">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
