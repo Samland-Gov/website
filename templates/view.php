@@ -10,11 +10,15 @@
         $path = $root.$name;
 
         if (!($path == $root) && file_exists($path)) {
+            $type = mime_content_type($path);
+            $size = filesize($path);
             echo("<h1>File `{$name}`</h1>");
-            echo("<a download href=\"{$name}\">Download here.</a>");
+            echo("<p>Type: {$type}. Size: {$size} bytes.<p>");
+            echo("<a href=\"{$name}\">Download here.</a>");
             if (file_exists($path.".desc")) {
                 $desc = file_get_contents($path.".desc");
-                echo("<div>{$desc}</div>");
+                echo("<br>");
+                echo("<div style=\"margin-top: 40px;\">{$desc}</div>");
             }
         } else {
             echo("<h1>404 File not found.</h1>");
