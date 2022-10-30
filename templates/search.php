@@ -13,7 +13,7 @@
         foreach ($files as $file) {
             if ($file != ".." & $file != ".") {
                 if (is_file($dir."/".$file)) {
-                    if (!str_ends_with($file, ".desc") && !($file == ".git") && !($file == "README.md")){
+                    if (!str_ends_with($file, ".desc") && !str_ends_with($file, ".url") && !($file == ".git") && !($file == "README.md")){
                         if (strpos(strtolower($prefix.$file), strtolower($for)) !== false) {
                             $when = date("F d Y H:i:s.", filemtime("{$dir}/{$file}"));
                             $path = htmlentities("/{$dir}/{$file}");
