@@ -1,3 +1,6 @@
+<?php
+require( __DIR__."/../vendor/autoload.php" );
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,8 +8,8 @@
 		<title>Samland Government - <?php echo($page);?></title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
-	<body class="content">
-		<header>
+	<body>
+		<header id="one">
 			<h1><a href="/">Samland Government</a> - <?php echo($page);?></h1>
 			<form action="/search.php" method="GET">
 				<input name="q" id="q">
@@ -14,13 +17,13 @@
 			</form>
 		</header>
 		<div id="main">
-			<nav>
+			<nav id="two">
 				<a href="/"><p>Home</p></a>
 				<a href="/search.php?q=regulations"><p>Regulations</p></a>
 				<a href="/search.php?q="><p>All Files</p></a>
 			</nav>
 
-			<main>
+			<main id="three">
 				<div>
 					`% yield content %`
 				</div>
