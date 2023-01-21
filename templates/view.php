@@ -11,7 +11,7 @@
 
         if (!($path == $root) && file_exists($path)) {
             if (!str_ends_with($file, ".meta.json") && !($file == ".git") && !($file == "README.md")){
-                echo("<section id=\"preview\">\n");
+                echo("<section>\n");
                 $type = mime_content_type($path);
                 $size = filesize($path);
                 echo("<h1>File `{$name}`</h1>");

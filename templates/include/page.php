@@ -25,7 +25,7 @@ require( __DIR__."/../vendor/autoload.php" );
 			</nav>
 
 			<main id="three">
-				<div>
+				<div id="preview">
 					`% yield content %`
 				</div>
 			</main>
