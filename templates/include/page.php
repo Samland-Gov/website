@@ -7,8 +7,9 @@ require( __DIR__."/../vendor/autoload.php" );
 		<meta charset="UTF-8">
 		<title>Samland Government - <?php echo($page);?></title>
 		<link rel="stylesheet" href="/style.css">
+		<link rel="stylesheet" href="/github-markdown.css">
 	</head>
-	<body>
+	<body class="markdown-body">
 		<header id="one">
 			<h1><a href="/">Samland Government</a> - <?php echo($page);?></h1>
 			<form action="/search.php" method="GET">

@@ -39,10 +39,10 @@
                 }
                 if ($markdownFormat) {
                     echo("<hr>\n");
-                    echo("<section>\n");
+                    echo("<article class=\"markdown-body\">\n");
                     $Parsedown = new Parsedown();
                     echo $Parsedown->text(file_get_contents($path));
-                    echo("</section>\n");
+                    echo("</article>\n");
                 }
                 echo("</section>\n");
             }
