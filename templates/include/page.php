@@ -8,6 +8,8 @@ require( __DIR__."/../vendor/autoload.php" );
 		<title>Samland Government - <?php echo($page);?></title>
 		<link rel="stylesheet" href="/style.css">
 		<link rel="stylesheet" href="/github-markdown.css">
+		<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+		`% yield extra_head %`
 	</head>
 	<body class="markdown-body">
 		<header id="one">

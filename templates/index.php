@@ -4,5 +4,8 @@
     <p>We are a virtual country based on the Miners Online Minecraft server!</p>
 
     <h2>Links</h2>
-    <a  href="https://transit.minersonline.tk">View the world's transit map.</a>
+    <ul>
+        <li><a href="https://transit.minersonline.tk">View the world's transit map.</a></li>
+        <li><a href="/stats.php">View Samland statistics!</a></li>
+    </ul>
 `% endblock %`
