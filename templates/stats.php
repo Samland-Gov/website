@@ -13,23 +13,19 @@
                 $.when.apply($, promises).then(function(){
                     var stats = [];
                     var ethnicStats = [];
-                    var employRate = 0;
-                    var homelessRate = 0;
-                    var childRate = 0;
-                    var audltRate = 0;
-                    var plainsRate = 0;
-                    var sonwRate = 0;
+
                     stats.push(["Day", "Total Population", "Employed", "Homeless"]);
-                    ethnicStats.push(["Day", "Adults", "Children", "Plains", "Snowy"]);
+                    ethnicStats.push(["Day", "Adults", "Children", "Plains", "Taiga", "Snowy"]);
 
                     for(var i = 0; i < arguments.length; i++){
                         var list = arguments[i][0]["data"]
-                        homelessRate = 0;
-                        employRate = 0;
-                        childRate = 0;
-                        audltRate = 0;
-                        plainsRate = 0;
-                        sonwRate = 0;
+                        var employRate = 0;
+                        var homelessRate = 0;
+                        var childRate = 0;
+                        var audltRate = 0;
+                        var taigaRate = 0;
+                        var plainsRate = 0;
+                        var sonwRate = 0;
                         for (var key in list) {
                             if (list.hasOwnProperty(key)) {
                                 var pop = list[key]
@@ -50,6 +46,9 @@
                                 if (pop["type"] == "minecraft:snow") {
                                     sonwRate += 1;
                                 }
+                                if (pop["type"] == "minecraft:taiga") {
+                                    taigaRate += 1;
+                                }
                             }
                         }
 
@@ -64,6 +63,7 @@
                             audltRate,
                             childRate,
                             plainsRate,
+                            taigaRate,
                             sonwRate
                         ]);
                     }
