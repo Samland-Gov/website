@@ -1,0 +1,68 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "../components/header/macro.njk" import samlandHeader -%}
+{% from "../components/footer/macro.njk" import samlandFooter -%}
+
+{% block headIcons %}
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+{% endblock %}
+{% block pageTitle %}{{ pageName }} – {{ serviceName }}{% endblock %}
+
+{% block header %}
+{{ samlandHeader({
+  assetsPath: "",
+  productName: "GOV.ZL",
+  homepageUrl: "/",
+  serviceName: "",
+  serviceUrl: "/"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block footer %}
+{{ samlandFooter({
+  meta: {
+    items: [
+      {
+        href: "/privacy",
+        text: "Privacy policy"
+      },
+      {
+        href: "/manage-prototype",
+        text: "Manage your prototype"
+      },
+      {
+        href: "/manage-prototype/clear-data",
+        text: "Clear data"
+      }
+    ],
+    visuallyHiddenTitle: "Footer links"
+  },
+  navigation: [
+    {
+      title: "Government activity",
+      width: "one-third",
+      items: [
+        {
+          href: "/government/what-is-samland",
+          text: "What is Samland?"
+        }
+      ]
+    ]
+  }
+}) }}
+{% endblock %}
