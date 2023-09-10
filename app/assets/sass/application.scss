@@ -4,3 +4,241 @@
 // 
 
 // Add extra styles here
+
+@charset "UTF-8";
+
+.govuk-grid-row, .hero__content {
+  margin-right: -15px;
+  margin-left: -15px; }
+  .govuk-grid-row:after, .hero__content:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.govuk-width-container, .hero {
+  max-width: 960px;
+  margin-right: 15px;
+  margin-left: 15px; }
+  @supports (margin: max(calc(0px))) {
+    .govuk-width-container, .hero {
+      margin-right: max(15px, calc(15px + env(safe-area-inset-right)));
+      margin-left: max(15px, calc(15px + env(safe-area-inset-left))); } }
+  @media (min-width: 40.0625em) {
+    .govuk-width-container, .hero {
+      margin-right: 30px;
+      margin-left: 30px; }
+      @supports (margin: max(calc(0px))) {
+        .govuk-width-container, .hero {
+          margin-right: max(30px, calc(15px + env(safe-area-inset-right)));
+          margin-left: max(30px, calc(15px + env(safe-area-inset-left))); } } }
+  @media (min-width: 1020px) {
+    .govuk-width-container, .hero {
+      margin-right: auto;
+      margin-left: auto; }
+      @supports (margin: max(calc(0px))) {
+        .govuk-width-container, .hero {
+          margin-right: auto;
+          margin-left: auto; } } }
+
+.breadcrumbs-hero {
+  margin: 0 0 30px;
+  padding: 10px 0;
+  border-bottom: 1px solid #5694ca; }
+  .breadcrumbs-hero .govuk-breadcrumbs__list-item:last-child a {
+    font-weight: bold;
+    text-decoration: none; }
+  .breadcrumbs-hero .govuk-breadcrumbs__list-item::before {
+    border-color: #ffffff; }
+
+/**
+ * Hero Component
+ *
+ * Notes:
+ * - If using together with a breadcrumb in a masthead, add the --breaded
+ *   modifier to reduce top padding.
+ * - There are two images included – one is shown on mobile (hero__inline-image),
+ *   and the other on tablet and above. Both are optional.
+ *
+ * Example Usage:
+ *
+ *  <div class="hero hero--breaded">
+ *    <div class="hero__content">
+ *      <div class="hero__body">
+ *        <h1 class="hero__title">Duis aute irure dolor in reprehenderit</h1>
+ *        <div class="hero__inline-image">
+ *          <img src="//placehold.it/646x492/005ea5/ffffff?text=A+supporting+image" alt="" role="presentation">
+ *        </div>
+ *        <p class="hero__description">
+ *          Lorem ipsum dolor sit amet, consectetur adipisicing elit
+ *        </p>
+ *        <a href="#" role="button" class="hero-button">
+ *          Do this thing
+ *        </a>
+ *        <span class="hero-alternative-action">
+ *          or <a href="#">do another thing</a> because reasons
+ *        </span>
+ *        <p>Pellentesque commodo arcu in sollicitudin lacinia. Vivamus lacus nibh, maximus nec laoreet eget, condimentum vel mi.</p>
+ *      </div>
+ *      <div class="hero__aside-image">
+ *        <img src="//placehold.it/646x492/005ea5/ffffff?text=A+supporting+image" alt="" role="presentation">
+ *      </div>
+ *    </div>
+ *  </div>
+ */
+.hero {
+  margin-top: -10px;
+  margin-bottom: 0;
+  color: #ffffff;
+  padding: 25px 0; }
+  .hero--breaded {
+    padding-top: 0; }
+  .hero a:link,
+  .hero a:visited {
+    color: #ffffff; }
+  .hero a:hover,
+  .hero a:active {
+    color: #ffffff; }
+  .hero a:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #ffdd00;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    text-decoration: none; }
+  .hero__title {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 1.09375; }
+    @media print {
+      .hero__title {
+        font-family: sans-serif; } }
+    @media (min-width: 40.0625em) {
+      .hero__title {
+        font-size: 48px;
+        font-size: 3rem;
+        line-height: 1.0416666667; } }
+    @media print {
+      .hero__title {
+        font-size: 32pt;
+        line-height: 1.15; } }
+  .hero__description {
+    color: white;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.1111111111; }
+    @media print {
+      .hero__description {
+        font-family: sans-serif; } }
+    @media (min-width: 40.0625em) {
+      .hero__description {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 1.25; } }
+    @media print {
+      .hero__description {
+        font-size: 18pt;
+        line-height: 1.15; } }
+  .hero__title, .hero__description {
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    @media (min-width: 40.0625em) {
+      .hero__title, .hero__description {
+        margin-bottom: 30px; } }
+  .hero__inline-image {
+    text-align: center; }
+    @media (min-width: 40.0625em) {
+      .hero__inline-image {
+        display: none;
+        visibility: hidden; } }
+    .hero__inline-image img {
+      width: 100%;
+      max-width: 320px; }
+  .hero__aside-image {
+    display: none;
+    visibility: hidden; }
+    @media (min-width: 40.0625em) {
+      .hero__aside-image {
+        display: block;
+        visibility: visible; } }
+    .hero__aside-image img {
+      max-width: 100%;
+      margin-top: 15px; }
+  .hero__body, .hero__aside-image {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px; }
+    .hero__body a:link,
+    .hero__body a:visited, .hero__aside-image a:link,
+    .hero__aside-image a:visited {
+      font-weight: bold; }
+  @media (min-width: 40.0625em) {
+    .hero__body {
+      width: 66.6666%; }
+    .hero__aside-image {
+      width: 33.3333%; } }
+  .hero .button--start_white:link,
+  .hero .button--start_white:visited {
+    background-color: #ffffff;
+    color: #1d70b8;
+    background-size: 20px;
+    background-position: 96% 50%;
+    box-shadow: 0 2px 0 #004172; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      .hero .button--start_white:link,
+      .hero .button--start_white:visited {
+        background-image: file-url("/pay-product-page/images/hero-button/arrow@2x.png"); } }
+  .hero .button--start_white:hover {
+    color: #5694ca; }
+
+.hero-alternative-action {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  margin-bottom: 15px;
+  position: relative; }
+  @media print {
+    .hero-alternative-action {
+      font-family: sans-serif; } }
+  @media (min-width: 40.0625em) {
+    .hero-alternative-action {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.3157894737; } }
+  @media print {
+    .hero-alternative-action {
+      font-size: 14pt;
+      line-height: 1.15; } }
+  @media (min-width: 40.0625em) {
+    .hero-alternative-action {
+      top: 10px;
+      margin-left: 15px; } }
+.image {
+  max-width: 100%; }
+
+/**
+ * Masthead Component
+ *
+ * Notes:
+ * - It's big and it's blue
+ *
+ * Example Usage:
+ *
+ * <div class="masthead">
+ *  [...]
+ * </div>
+ */
+.masthead {
+  background-color: #1d70b8; }
