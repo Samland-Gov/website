@@ -8,14 +8,13 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% from "../components/footer/macro.njk" import samlandFooter -%}
 
 {% block headIcons %}
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/public/images/flag.svg" type="image/x-icon" />
 {% endblock %}
 {% block pageTitle %}{{ pageName }} – {{ serviceName }}{% endblock %}
 
 {% block header %}
 {{ samlandHeader({
   assetsPath: "",
-  productName: "GOV.ZL",
   homepageUrl: "/",
   serviceName: "",
   serviceUrl: "/"

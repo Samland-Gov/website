@@ -4,8 +4,45 @@
 // 
 
 // Add extra styles here
-
 @charset "UTF-8";
+
+// @import "footer.scss";
+
+.app__samland-copyright-logo {
+  // Based on the govuk-crest-2x.png image dimensions.
+  $govuk-footer-crest-image-width-2x: 180px;
+  $govuk-footer-crest-image-height-2x: 125px;
+  // Half the 2x image so that it fits the regular 1x size.
+  $govuk-footer-crest-image-width: ($govuk-footer-crest-image-width-2x / 2);
+  $govuk-footer-crest-image-height: ($govuk-footer-crest-image-height-2x / 2);
+
+  display: inline-block;
+  min-width: $govuk-footer-crest-image-width;
+  padding-top: ($govuk-footer-crest-image-height + govuk-spacing(2));
+  background-image: url("/public/images/flag.svg");
+  @include govuk-device-pixel-ratio {
+    background-image: url("/public/images/flag.svg");
+  }
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  background-size: $govuk-footer-crest-image-width $govuk-footer-crest-image-height;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.govuk-header__logotype-text,
+.govuk-link,
+.govuk-tag,
+.govuk-phase-banner__content,
+.govuk-header__product-name,
+.govuk-heading-xl, 
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-heading-s,
+.govuk-body,
+body {
+  font-family: arial, sans-serif !important;
+}
 
 .govuk-grid-row, .hero__content {
   margin-right: -15px;
@@ -105,7 +142,7 @@
     box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
     text-decoration: none; }
   .hero__title {
-    font-family: "GDS Transport", arial, sans-serif;
+    font-family: arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 700;
@@ -126,7 +163,7 @@
         line-height: 1.15; } }
   .hero__description {
     color: white;
-    font-family: "GDS Transport", arial, sans-serif;
+    font-family: arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
@@ -199,7 +236,7 @@
     color: #5694ca; }
 
 .hero-alternative-action {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
