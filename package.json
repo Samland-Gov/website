@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
-    "start": "govuk-prototype-kit start"
+    "start": "govuk-prototype-kit start",
+    "prod": "NODE_ENV=production node ./app/listen-on-port.js"
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "1.2.2",
