@@ -2,7 +2,8 @@
    "name":"app",
    "version":"0.0.1",
    "workspaces":[
-      "apps/frontend"
+      "apps/frontend",
+      "apps/backend/document-api"
    ],
    "license":"MIT",
    "scripts": {

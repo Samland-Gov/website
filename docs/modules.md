@@ -8,4 +8,8 @@ The frontend shall be completely separate from the backend, and shall ues the ba
 
 ## Backend
 
-The backend is responsible for handling document requests from the frontend.
+The backend is responsible for handling document requests from the frontend. The backend is split into multiple services, each with its own API.
+
+### Services
+
+#### Document API
