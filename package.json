@@ -1,13 +1,15 @@
 {
-  "scripts": {
-    "dev": "govuk-prototype-kit dev",
-    "serve": "govuk-prototype-kit serve",
-    "start": "govuk-prototype-kit start",
-    "prod": "NODE_ENV=production node ./app/listen-on-port.js"
-  },
-  "dependencies": {
-    "@govuk-prototype-kit/common-templates": "1.2.2",
-    "govuk-frontend": "4.7.0",
-    "govuk-prototype-kit": "13.13.1"
-  }
+   "name":"app",
+   "version":"0.0.1",
+   "workspaces":[
+      "apps/frontend"
+   ],
+   "license":"MIT",
+   "scripts": {
+      "postinstall": "node ./apps/postinstall.js",
+      "frontend:dev": "npm run dev --workspace=frontend",
+      "frontend:serve": "npm run serve --workspace=frontend",
+      "frontend:start": "npm run start --workspace=frontend",
+      "frontend:prod": "npm run prd --workspace=frontend"
+   }
 }
