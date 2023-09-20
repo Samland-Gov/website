@@ -7,6 +7,7 @@
    ],
    "license": "MIT",
    "scripts": {
+      "postinstall": "node ./apps/postinstall.js",
       "frontend:dev": "npm run dev --workspace=frontend",
       "frontend:serve": "npm run serve --workspace=frontend",
       "frontend:start": "npm run start --workspace=frontend",

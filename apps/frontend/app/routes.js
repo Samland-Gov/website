@@ -7,17 +7,22 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 const fs = require('fs')
 
-// Add your routes here
+var marked = require('marked');
+var metaMarked = require('meta-marked');
+var gfmHeadingId = require("marked-gfm-heading-id");
+
+
 router.get("/:path(*)", function(req, res, next){
-   // Allow the docs.html template to 'include' markdown files
-   var marked = require('marked');
-   var gfmHeadingId = require("marked-gfm-heading-id");
-
-
    var path = __dirname +"/../../../content/" + req.params.path + ".md";
+
+   if (!fs.existsSync(path)) {
+      next();
+      return;
+   }
+
    var include = fs.readFileSync(path, 'utf8');
-   marked.marked.use(gfmHeadingId);
-   var html = marked.marked(include, {
+   marked.use(gfmHeadingId);
+   var html = metaMarked(include, {
       "gfm": true
    });
 

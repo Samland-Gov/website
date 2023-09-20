@@ -10,6 +10,7 @@
     "govuk-frontend": "4.7.0",
     "govuk-prototype-kit": "^13.13.2",
     "marked": "^9.0.3",
-    "marked-gfm-heading-id": "^3.0.8"
+    "marked-gfm-heading-id": "^3.0.8",
+    "meta-marked": "^0.5.0"
  }
 }

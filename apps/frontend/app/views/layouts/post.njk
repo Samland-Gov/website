@@ -1,6 +1,6 @@
 {% extends "layouts/main.njk" %}
 
-{% set pageName="What is Samland?" %}
+{% set pageName=md["meta"]["title"] %}
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -9,17 +9,9 @@
   },
   html: 'This is a new service – your <a class="govuk-link" href="https://github.com/Samland-Gov/website/issues">feedback</a> will help us to improve it.'
 }) }}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "/"
-      },
-      {
-        text: "What is Samland?"
-      }
-    ]
-  }) }}
+{{ govukBreadcrumbs({
+  items: md["meta"]["breadcrums"]
+}) }}
 
 {% endblock %}
 
@@ -27,15 +19,16 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      What is Samland?
+      {{ md["meta"]["title"] }}
     </h1>
   </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
-    {{ md | safe }}
+    {{ md["html"] | safe }}
   </div>
+
   <div class="govuk-grid-column-one-third">
     <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
       <h2 class="govuk-heading-m" id="subsection-title">
@@ -43,11 +36,15 @@
       </h2>
       <nav role="navigation" aria-labelledby="subsection-title">
         <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
-          <li>
-            <a href="https://en.wikipedia.org/wiki/Micronation">
-              Wikipedia (Micronation)
-            </a>
-          </li>
+          {% for item in md["meta"]["links"] %}
+            {% for text, href in item %}
+              <li>
+                <a href="{{href}}">
+                  {{ text }}
+                </a>
+              </li>
+            {% endfor %}
+          {% endfor %}
         </ol>
       </nav>
     </aside>
