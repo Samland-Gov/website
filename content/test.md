@@ -9,12 +9,12 @@ breadcrums: [
         text: "Test"
     }
 ]
-links: {
+links: [
     {
         text: "Example",
         href: "example.com"
-    },   
-}
+    }
+]
 ---
 
 # Hello World
