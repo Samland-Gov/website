@@ -10,33 +10,7 @@ const fs = require('fs')
 const marked = require('marked');
 const metaMarked = require('meta-marked');
 const gfmHeadingId = require("marked-gfm-heading-id");
-
-let slugger = null;
-import("github-slugger").then(({ default: GithubSlugger, extra }) => {
-   slugger = new GithubSlugger();
-});
-
-
-
-const renderer = new marked.Renderer();
-
-renderer.heading = function(text, level, raw) {
-   var cssClass = "";
-   if (level == "1") {
-      cssClass = "class='govuk-heading-l'";
-   } else if (level == "2") {
-      cssClass = "class='govuk-heading-m'";
-   } else if (level == "3") {
-      cssClass = "class='govuk-heading-s'";
-   }
-
-   raw = raw.toLowerCase().trim().replace(/<[!\/a-z].*?>/ig, '');
-   return `<h${level} id="${slugger.slug(raw)}"${cssClass}>${text}</h${level}>`;
-}
-
-renderer.paragraph = function(text) {
-   return `<p class='govuk-body'>${text}</p>\n`;
-}
+const renderer = require("./renderer").renderer;
 
 router.get("/:path(*)", function(req, res, next){
    var path = __dirname +"/../../../content/" + req.params.path + ".md";

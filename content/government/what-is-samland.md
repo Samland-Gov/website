@@ -23,7 +23,7 @@ Samland is a virtual micronation that has existed since 2017 and has a small onl
 
 ## What is a Micronation?
 
-A micronation is a political entity whose representatives claim that they belong to an independent nation or sovereign state, but which lacks legal recognition by any sovereign state.[1] Micronations often exist as social experiments, art projects, or simply as a form of online community.
+A micronation is a political entity whose representatives claim that they belong to an independent nation or sovereign state, but which lacks legal recognition by any sovereign state. [[1]](https://en.wikipedia.org/wiki/Micronation) Micronations often exist as social experiments, art projects, or simply as a form of online community.
 
 ## The Story of Samland
 
