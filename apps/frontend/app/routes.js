@@ -10,15 +10,28 @@ const fs = require('fs')
 const marked = require('marked');
 const metaMarked = require('meta-marked');
 const gfmHeadingId = require("marked-gfm-heading-id");
-const GithubSlugger = require('github-slugger');
-let slugger = new GithubSlugger();
+
+let slugger = null;
+import("github-slugger").then(({ default: GithubSlugger, extra }) => {
+   slugger = new GithubSlugger();
+});
+
 
 
 const renderer = new marked.Renderer();
 
 renderer.heading = function(text, level, raw) {
+   var cssClass = "";
+   if (level == "1") {
+      cssClass = "class='govuk-heading-l'";
+   } else if (level == "2") {
+      cssClass = "class='govuk-heading-m'";
+   } else if (level == "3") {
+      cssClass = "class='govuk-heading-s'";
+   }
+
    raw = raw.toLowerCase().trim().replace(/<[!\/a-z].*?>/ig, '');
-   return `<h${level} id="${slugger.slug(raw)}" class='testing'>${text}</h${level}>`;
+   return `<h${level} id="${slugger.slug(raw)}"${cssClass}>${text}</h${level}>`;
 }
 
 router.get("/:path(*)", function(req, res, next){
