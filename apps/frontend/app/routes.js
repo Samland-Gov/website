@@ -49,5 +49,9 @@ router.get("/:path(*)", function(req, res, next){
       "renderer": renderer
    });
 
-   res.render('layouts/post', {"md": html, "links": html["meta"]["links"]});
+   var meta = html["meta"] || {
+      "title": "Unknown page",
+   };
+
+   res.render('layouts/post', {"html": html["html"], "meta": meta});
 });

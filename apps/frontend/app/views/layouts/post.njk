@@ -1,6 +1,6 @@
 {% extends "layouts/main.njk" %}
 
-{% set pageName=md["meta"]["title"] %}
+{% set pageName=meta["title"] %}
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -10,7 +10,7 @@
   html: 'This is a new service – your <a class="govuk-link" href="https://github.com/Samland-Gov/website/issues">feedback</a> will help us to improve it.'
 }) }}
 {{ govukBreadcrumbs({
-  items: md["meta"]["breadcrums"]
+  items: meta["breadcrums"]
 }) }}
 
 {% endblock %}
@@ -19,14 +19,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ md["meta"]["title"] }}
+      {{ meta["title"] }}
     </h1>
   </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
-    {{ md["html"] | safe }}
+    {{ html | safe }}
   </div>
 
   <div class="govuk-grid-column-one-third">
@@ -36,7 +36,7 @@
       </h2>
       <nav role="navigation" aria-labelledby="subsection-title">
         <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
-          {% for item in links %}
+          {% for item in meta["links"] %}
             <li>
               <a href="{{item["href"]}}">
                 {{ item["text"] }}
