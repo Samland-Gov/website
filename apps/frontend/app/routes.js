@@ -34,6 +34,10 @@ renderer.heading = function(text, level, raw) {
    return `<h${level} id="${slugger.slug(raw)}"${cssClass}>${text}</h${level}>`;
 }
 
+renderer.paragraph = function(text) {
+   return `<p class='govuk-body'>${text}</p>\n`;
+}
+
 router.get("/:path(*)", function(req, res, next){
    var path = __dirname +"/../../../content/" + req.params.path + ".md";
 

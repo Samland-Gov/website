@@ -1,6 +1,6 @@
 ---
 title: What is Samland?
-breadcrums: [
+breadcrumbs: [
     {
         text: "Home",
         href: "/"
