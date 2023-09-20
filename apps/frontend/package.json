@@ -8,6 +8,8 @@
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "1.2.2",
     "govuk-frontend": "4.7.0",
-    "govuk-prototype-kit": "13.13.1"
-  }
+    "govuk-prototype-kit": "^13.13.2",
+    "marked": "^9.0.3",
+    "marked-gfm-heading-id": "^3.0.8"
+ }
 }

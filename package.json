@@ -1,13 +1,12 @@
 {
-   "name":"app",
-   "version":"0.0.1",
-   "workspaces":[
+   "name": "app",
+   "version": "0.0.1",
+   "workspaces": [
       "apps/frontend",
       "apps/backend/document-api"
    ],
-   "license":"MIT",
+   "license": "MIT",
    "scripts": {
-      "postinstall": "node ./apps/postinstall.js",
       "frontend:dev": "npm run dev --workspace=frontend",
       "frontend:serve": "npm run serve --workspace=frontend",
       "frontend:start": "npm run start --workspace=frontend",
