@@ -1,6 +1,6 @@
 ---
 title: Department for Digital
-breadcrumbs: {
+breadcrumbs: [
     {
         text: "Home",
         href: "/"
@@ -9,7 +9,7 @@ breadcrumbs: {
         text: "Organisations",
         href: "/organisations"
     }
-}
+]
 ---
 
 ## What we do
