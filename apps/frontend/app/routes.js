@@ -13,11 +13,13 @@ const gfmHeadingId = require("marked-gfm-heading-id");
 const renderer = require("./renderer").renderer;
 
 router.get("/:path(*)", function(req, res, next){
-   var path = __dirname +"/../../../content/" + req.params.path + ".md";
+   var path = __dirname +"/../../../content/index.md";
 
    if (!fs.existsSync(path)) {
-      next();
-      return;
+      path = __dirname +"/../../../content" + req.params.path + ".md";
+      if (!fs.existsSync(path)) {
+         return next();
+      }
    }
 
    var include = fs.readFileSync(path, 'utf8');
