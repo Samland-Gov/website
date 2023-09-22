@@ -1,0 +1,41 @@
+{% extends "layouts/main.njk" %}
+
+{% set pageName="Organisations" %}
+
+{% block header %}
+{{ samlandHeader({
+  assetsPath: "",
+  homepageUrl: "/",
+  serviceName: "",
+  serviceUrl: "/"
+}) }}
+{{ govukBreadcrumbs({
+    items: [
+    {
+        text: "Home",
+        href: "/"
+    },
+    {
+        text: "Organisations"
+    }
+]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+    Organisations
+</h1>
+
+<nav role="navigation" aria-labelledby="subsection-title">
+    <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+        <li>
+            <a href="/government/organisations/department-for-digital">
+                Department for Digital
+            </a>
+        </li>
+    </ol>
+</nav>
+
+{% endblock %}
