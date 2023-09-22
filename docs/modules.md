@@ -1,4 +1,36 @@
-# Modules
+---
+title: Modules
+layout: mainstream-guide.njk
+breadcrumbs: [
+    {
+        text: "Home",
+        href: "/"
+    },
+    {
+        text: "Organisations",
+        href: "/government/organisations"
+    },
+    {
+        text: "Department for Digital",
+        href: "/government/organisations/department-for-digital/developers"
+    },
+    {
+        text: "Developers",
+        href: "/government/organisations/department-for-digital/developers"
+    },
+    {
+        text: "Services",
+        href: "/government/organisations/department-for-digital/developers/services"
+    },
+    {
+        text: "Website",
+        href: "/government/organisations/department-for-digital/developers/services/website"
+    },
+    {
+        text: "Modules"
+    }
+]
+---
 
 ## Frontend
 
