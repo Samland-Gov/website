@@ -1,5 +1,6 @@
 ---
 title: Department for Digital
+layout: post.njk
 breadcrumbs: [
     {
         text: "Home",

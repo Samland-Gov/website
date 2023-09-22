@@ -1,5 +1,6 @@
 ---
 title: What is Samland?
+layout: post.njk
 breadcrumbs: [
     {
         text: "Home",

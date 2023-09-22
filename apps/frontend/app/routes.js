@@ -30,7 +30,8 @@ router.get("/:path(*)", function(req, res, next){
 
    var meta = html["meta"] || {
       "title": "Unknown page",
+      "layout": "post.njk"
    };
 
-   res.render('layouts/post', {"html": html["html"], "meta": meta});
+   res.render('layouts/'+meta["layout"], {"html": html["html"], "meta": meta});
 });

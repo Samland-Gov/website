@@ -9,6 +9,15 @@
   serviceName: "",
   serviceUrl: "/"
 }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="https://github.com/Samland-Gov/website/issues">feedback</a> will help us to improve it.'
+}) }}
 {{ govukBreadcrumbs({
     items: [
     {
