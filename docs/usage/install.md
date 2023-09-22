@@ -78,4 +78,4 @@ Before you begin, make sure you have the following installed on your system:
 
 4. **Start the Application:**
 
-You make the the [running guide](./running.md) to see how this project can be ran.
+Now go to the [running guide](./running.md) to see how this project can be ran.
