@@ -11,3 +11,6 @@ usage-data-config.json
 # General ignores
 .DS_Store
 .idea
+
+# Symlinks
+content/government/organisations/department-for-digital/developers/services/website
