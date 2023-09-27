@@ -3,7 +3,7 @@
    "version": "0.0.1",
    "workspaces": [
       "apps/frontend",
-      "apps/backend/document-api"
+      "apps/backend/generator"
    ],
    "license": "MIT",
    "scripts": {
@@ -11,6 +11,7 @@
       "frontend:dev": "npm run dev --workspace=frontend",
       "frontend:serve": "npm run serve --workspace=frontend",
       "frontend:start": "npm run start --workspace=frontend",
-      "frontend:prod": "npm run prod --workspace=frontend"
+      "frontend:prod": "npm run prod --workspace=frontend",
+      "build": "node ./apps/backend/generator/index.js"
    }
 }
