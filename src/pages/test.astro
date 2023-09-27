@@ -3,17 +3,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-//@ts-ignore
-import govuk from 'govuk-frontend'
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-        <script is:inline define:vars={{ govuk: govuk }}>
-            console.log(govuk);
-        </script>
     </head>
 	<body>
         <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
@@ -72,8 +67,8 @@ import govuk from 'govuk-frontend'
 		</main>
 		<Footer />
         <script>
-            import govuk from 'govuk-frontend'
-            govuk.initAll()
+            import { initAll } from 'govuk-frontend'
+            initAll()
         </script>
 	</body>
 </html>
