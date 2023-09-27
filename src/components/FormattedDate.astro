@@ -1,0 +1,30 @@
+---
+interface Props {
+	date: string | Date;
+}
+
+const { date } = Astro.props;
+
+var time: Date = new Date(Date.now());
+if (date instanceof Date) {
+	time = date;
+}
+if (typeof date === 'string') {
+	const parts = date.split(' ');
+	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	const month = monthNames.indexOf(parts[0]);
+	const day = parseInt(parts[1]);
+	const year = parseInt(parts[2]);
+	time = new Date(year, month, day);
+}
+---
+
+<time datetime={time.toISOString()}>
+	{
+		time.toLocaleDateString('en-us', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+		})
+	}
+</time>

@@ -1,17 +1,20 @@
 {
-   "name": "app",
-   "version": "0.0.1",
-   "workspaces": [
-      "apps/frontend",
-      "apps/backend/generator"
-   ],
-   "license": "MIT",
-   "scripts": {
-      "postinstall": "node ./apps/postinstall.js",
-      "frontend:dev": "npm run dev --workspace=frontend",
-      "frontend:serve": "npm run serve --workspace=frontend",
-      "frontend:start": "npm run start --workspace=frontend",
-      "frontend:prod": "npm run prod --workspace=frontend",
-      "build": "node ./apps/backend/generator/index.js"
-   }
+  "name": "samland",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^1.1.0",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "astro": "^3.1.4",
+    "govuk-frontend": "^4.7.0",
+    "sass": "^1.68.0"
+  }
 }
