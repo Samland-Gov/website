@@ -3,10 +3,14 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('docs');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+	return posts.map((post) => {
+		let slug = post.slug.endsWith('index') ? post.slug.replace(/\/?index$/, '') : post.slug;
+		slug = slug.trim();
+		return {
+			params: { slug: slug || undefined },
+			props: post,
+		};
+	});
 }
 type Props = CollectionEntry<'docs'>;
 
