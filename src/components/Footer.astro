@@ -1,6 +1,5 @@
 ---
 const today = new Date();
-import flagImg from '../assets/images/flag.svg';
 ---
 
 <footer class="govuk-footer " role="contentinfo">
@@ -35,8 +34,8 @@ import flagImg from '../assets/images/flag.svg';
 					aria-hidden="true"
 					focusable="false"
 					class="govuk-footer__licence-logo"
-					height="10%"
-					width="10%"
+					height="20%"
+					width="20%"
 					src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png"
 					/>
 					<span class="govuk-footer__licence-description">
@@ -45,14 +44,12 @@ import flagImg from '../assets/images/flag.svg';
 				</div>
 			</div>
 			<div class="govuk-footer__meta-item">
-				<div class="govuk-footer__link govuk-footer__copyright-logo"></div>
-					<img 
-						src={flagImg.src}
-						height="10%"
-						width="10%"
-					>
+				<a 
+					class="govuk-footer__link app__samland-copyright-logo"
+					href="#"
+				>
 					Copyright &copy; {today.getFullYear()} Samland Government. All rights reserved.
-				</div>
+				</a>
 			</div>
 		</div>
     </div>

@@ -1,6 +1,5 @@
 ---
 import { SITE_TITLE } from '../consts';
-import flagImg from '../assets/images/flag.svg';
 ---
 
 <header class="govuk-header " role="banner" data-module="govuk-header">
@@ -8,7 +7,7 @@ import flagImg from '../assets/images/flag.svg';
 		<div class="govuk-header__logo">
 			<a href="/" class="govuk-header__link govuk-header__link--homepage">
 				<span class="govuk-header__logotype">
-					<img src={flagImg.src} class="govuk-header__logotype-crown" height="30" alt="">
+					<img src="/images/flag.svg" height="25" role="presentation" alt="">
 
 					<span class="govuk-header__logotype-text">
 						{SITE_TITLE}
@@ -45,7 +44,7 @@ import flagImg from '../assets/images/flag.svg';
 		.govuk-header__logotype-text {
 			color: black;
 		}
-		.govuk-header__logotype-crown {
+		.govuk-header__logotype img {
 			margin-right: 0.5em;
 		}
 	}
