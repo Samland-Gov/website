@@ -4,12 +4,9 @@ import FormattedDate from '../components/FormattedDate.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.scss';
 
-type Props = CollectionEntry<'docs'>['data'];
+type Props = CollectionEntry<'blog'>['data'];
 
-// @ts-ignore
-const { frontmatter } = Astro.props;
-// @ts-ignore
-const { title, description, pubDate, updatedDate, heroImage } = frontmatter;
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
