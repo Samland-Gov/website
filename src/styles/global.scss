@@ -59,6 +59,28 @@ pre > code {
 	all: unset;
 }
 
+//
+//
+// GOVUK styles
+//
+//
+
+.govuk-header {
+	margin: 0;
+	padding: 0 1em;
+	background: white !important;
+	box-shadow: 0 2px 8px rgba(var(--black), 5%);
+}
+.govuk-header__link,
+.govuk-header__menu-button,
+.govuk-header__logotype-text {
+	color: black !important;
+}
+.govuk-header__logotype img {
+	margin-right: 0.5em;
+}
+
+
 $govuk-font-family: 'Atkinson';
 $govuk-global-styles: true;
 @import "node_modules/govuk-frontend/govuk/all";
