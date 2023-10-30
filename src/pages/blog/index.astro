@@ -90,10 +90,10 @@ const posts = (await getCollection('blog')).sort(
 				posts.map((post) => (
 					<li>
 						<a href={`/blog/${post.slug}/`}>
-							<img width={720} height={360} src={post.data.heroImage} alt="" />
-							<h4 class="govuk-heading-s title">{post.data.title}</h4>
-							<p class="govuk-body date">
-								<FormattedDate date={post.data.pubDate} />
+							<img width={720} height={360} src={post.data.heroImage} alt=""/>
+							<h4>{post.data.title}</h4>
+							<p>
+								<FormattedDate date={post.data.pubDate}/>
 							</p>
 						</a>
 					</li>

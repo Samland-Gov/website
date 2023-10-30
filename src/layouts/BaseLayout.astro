@@ -17,34 +17,19 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <html lang="en">
 	<head>
 		{title ? 
-			<BaseHead title={title + " - " + SITE_TITLE} description={description || SITE_DESCRIPTION} image={image} /> : 
-			<BaseHead title={SITE_TITLE} description={description || SITE_DESCRIPTION} image={image} />
+			<BaseHead title={title + " - " + SITE_TITLE} description={description || SITE_DESCRIPTION} image={image}/> : 
+			<BaseHead title={SITE_TITLE} description={description || SITE_DESCRIPTION} image={image}/>
 		}
-		<slot name="head" />
+		<slot name="head"/>
 	</head>
-	<body class="govuk-template__body">
-        <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
-		<Header title={SITE_TITLE} />
+	<body>
+		<Header title={SITE_TITLE}/>
 		<slot name="afterHead"/>
-		<div class="govuk-width-container ">
-			<div class="govuk-phase-banner">
-				<p class="govuk-phase-banner__content">
-					<strong class="govuk-tag govuk-phase-banner__content__tag">
-						Alpha
-					</strong>
-					<span class="govuk-phase-banner__text">
-						This is a new service – your <a class="govuk-link" href="https://github.com/Samland-Gov/website/issues">feedback</a> will help us to improve it.
-					</span>
-				</p>
-			</div>
+		<div>
 			<main class="govuk-main-wrapper" id="main-content" role="main">
-				<slot />
+				<slot/>
 			</main>
 		</div>
-		<Footer />
-        <script>
-            import { initAll } from 'govuk-frontend'
-            initAll();
-        </script>
+		<Footer/>
 	</body>
 </html>

@@ -2,56 +2,47 @@
 const today = new Date();
 ---
 
-<footer class="govuk-footer " role="contentinfo">
-    <div class="govuk-width-container ">
-		<div class="govuk-footer__meta">
-			<div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-			  	<h2 class="govuk-visually-hidden">Support links</h2>
-			  	<ul class="govuk-footer__inline-list">
-					<li class="govuk-footer__inline-list-item">
-						<a class="govuk-footer__link" href="#">
-							Help
-						</a>
-					</li>
-					<li class="govuk-footer__inline-list-item">
-						<a class="govuk-footer__link" href="#">
-							Cookies
-						</a>
-					</li>
-					<li class="govuk-footer__inline-list-item">
-						<a class="govuk-footer__link" href="#">
-							Contact
-						</a>
-					</li>
-					<li class="govuk-footer__inline-list-item">
-						<a class="govuk-footer__link" href="#">
-							Terms and conditions
-						</a>
-					</li>
-				</ul>
-				<div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-					<img
-					aria-hidden="true"
-					focusable="false"
-					class="govuk-footer__licence-logo"
-					height="20%"
-					width="20%"
-					src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png"
-					/>
-					<span class="govuk-footer__licence-description">
-						All content is available under the <a class="govuk-footer__link" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a> unless stated otherwise.
-					</span>
-				</div>
-			</div>
-			<div class="govuk-footer__meta-item">
-				<a 
-					class="govuk-footer__link app__samland-copyright-logo"
-					href="#"
-				>
-					Copyright &copy; {today.getFullYear()} Samland Government. All rights reserved.
-				</a>
-			</div>
-		</div>
-    </div>
+<footer role="contentinfo">
+	<h2>Support links</h2>
+	<ul>
+		<li>
+			<a href="#">
+				Help
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				Cookies
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				Contact
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				Terms and conditions
+			</a>
+		</li>
+	</ul>
+	<div>
+		<img
+		aria-hidden="true"
+		focusable="false"
+		height="20%"
+		width="20%"
+		src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png"
+		/>
+		<span>
+			All content is available under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a> unless stated otherwise.
+		</span>
+	</div>
+
+	<div>
+		<a>
+			Copyright &copy; {today.getFullYear()} Samland Government. All rights reserved.
+		</a>
+	</div>
 </footer>
 
