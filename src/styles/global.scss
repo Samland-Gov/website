@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @font-face {
 	font-family: 'Atkinson';
 	src: url('/fonts/atkinson-regular.woff') format('woff');
@@ -24,17 +26,4 @@ pre > code {
 	all: unset;
 }
 
-body {
-	background-color: white;
-	color: black;
-}
-
-header a{
-	font-weight: bold;
-}
-
-header div {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
+@import "../../node_modules/bulma/bulma.sass";
