@@ -1,6 +1,5 @@
 ---
 title: What is Samland?
-layout: mainstream-guide.njk
 breadcrumbs: [
     {
         text: "Home",

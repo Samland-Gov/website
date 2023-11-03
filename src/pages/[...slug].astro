@@ -1,0 +1,24 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import MainstreamGuide from '../layouts/MainstreamGuide.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('guides');
+	return posts.map((post) => {
+		let slug = post.slug.endsWith('index') ? post.slug.replace(/\/?index$/, '') : post.slug;
+		slug = slug.trim();
+		return {
+			params: { slug: slug || undefined },
+			props: post,
+		};
+	});
+}
+type Props = CollectionEntry<'guides'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<MainstreamGuide {...post.data}>
+	<Content/>
+</MainstreamGuide>

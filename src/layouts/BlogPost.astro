@@ -30,6 +30,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		</div>
 	</section>
 	<section class="section">
+		<nav class="breadcrumb" aria-label="breadcrumbs">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li class="is-active"><a href="#" aria-current="page">{title}</a></li>  
+			</ul>
+		</nav>
 		<section class="content">
 			<slot/>
 		</section>
