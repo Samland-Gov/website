@@ -6,18 +6,17 @@ import gridsome from '@noxify/gridsome-remark-classes'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://minersonline.uk/samland',
+	site: 'https://samland.minersonline.uk',
 	integrations: [mdx(), sitemap()],
 	markdown: {
 		remarkPlugins: [[gridsome, {
-			'heading[depth=1]': 'govuk-heading-xl',
-			'heading[depth=2]': 'govuk-heading-l',
-			'heading[depth=3]': 'govuk-heading-m',
-			'heading[depth=4]': 'govuk-heading-s',
-			// 'heading[depth=5]': 'govuk-caption-s',
-			// 'heading[depth=6]': 'govuk-caption-m',
-			'paragraph': 'govuk-body',
-			'list': 'govuk-body'
+			// 'heading[depth=1]': 'title is-1',
+			// 'heading[depth=2]': 'title is-2',
+			// 'heading[depth=3]': 'title is-3',
+			// 'heading[depth=4]': 'title is-4',
+			// 'heading[depth=5]': 'title is-5',
+			// 'heading[depth=6]': 'title is-6',
+			'table': 'table is-bordered is-striped is-narrow is-hoverable is-fullwidth',
 		}]]
 	}
 });

@@ -1,12 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_DESCRIPTION } from '../consts';
 ---
 
 <BaseLayout>
-	<section>
-		<h2>
-			What is Samland?
-		</h2>
+	<section class="hero is-primary">
+		<div class="hero-body">
+			<div class="columns">
+				<div class="column">
+					<img src="/images/flag.svg">
+				</div>
+				<div class="column">
+					<p class="title">
+					Welcome to Samland
+					</p>
+					<p class="subtitle">
+					{SITE_DESCRIPTION}
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<h1 class="title">What is Samland?</h1>
 		<p>
 			Samland is a virtual micronation that has existed since 2017 and has a small online presence. 
 		</p>
@@ -19,25 +35,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			</a>
 		</p>
 	</section>
-	
-	<section>
-		<h2 class="govuk-heading-m">Support Us</h2>
-
-		<img src="/images/monero.png">
-		<div>
-			<p>
-				We appreciate your support! You can donate to us using the Monero cryptocurrency.
-			</p>
-			<p>
-				Scan the QR code, or click <a href="monero:82W6d1rsEfRJEMi1SzUELBAt4eTk5s5c5hQRpLbfqtmx4KWbPkNebs72HcSV48p9eDErS4gUX6BSPAXiUM51t9tbSzDbRZ8">here</a>.
-			</p>
-			<p>
-				You may send Monero directly to the following address:
-				<code>82W6d1rsEfRJEMi1SzUELBAt4eTk5s5c5hQRpLbfqtmx4KWbPkNebs72HcSV48p9eDErS4gUX6BSPAXiUM51t9tbSzDbRZ8</code>
-			</p>
-			<p>
-				You are unable to get your payments back.
-			</p>
+	<section class="section">
+		<h1 class="title">Support Us</h1>
+		<div class="columns">
+			<div class="column">
+				<img src="/images/monero.png">
+			</div>
+			<div class="column">
+				<p>
+					We appreciate your support! You can donate to us using the Monero cryptocurrency.
+				</p>
+				<p>
+					Scan the QR code, or click <a href="monero:82W6d1rsEfRJEMi1SzUELBAt4eTk5s5c5hQRpLbfqtmx4KWbPkNebs72HcSV48p9eDErS4gUX6BSPAXiUM51t9tbSzDbRZ8">here</a>.
+				</p>
+				<p>
+					You may send Monero directly to the following address:
+					<code>82W6d1rsEfRJEMi1SzUELBAt4eTk5s5c5hQRpLbfqtmx4KWbPkNebs72HcSV48p9eDErS4gUX6BSPAXiUM51t9tbSzDbRZ8</code>
+				</p>
+				<p>
+					You are unable to get your payments back.
+				</p>
+			</div>
 		</div>
 	</section>
 </BaseLayout>

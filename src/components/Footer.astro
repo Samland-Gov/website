@@ -1,48 +1,50 @@
 ---
 const today = new Date();
 ---
-
-<footer role="contentinfo">
-	<h2>Support links</h2>
-	<ul>
-		<li>
-			<a href="#">
-				Help
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				Cookies
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				Contact
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				Terms and conditions
-			</a>
-		</li>
-	</ul>
-	<div>
-		<img
-		aria-hidden="true"
-		focusable="false"
-		height="20%"
-		width="20%"
-		src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png"
-		/>
-		<span>
-			All content is available under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a> unless stated otherwise.
-		</span>
+<footer class="footer">
+	<div class="columns">
+		<div class="columns">
+			<div class="column">
+				<h2 class="subtitle">Support Links</h2>
+				<ul>
+					<li>
+						<a href="#">
+							Help
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Cookies
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Contact
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Terms and conditions
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="column">
+				<h2 class="subtitle">Government Activites</h2>
+				<ul>
+					<li>
+						<a href="/government/what-is-samland">
+							What is Samland?
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
-
-	<div>
-		<a>
-			Copyright &copy; {today.getFullYear()} Samland Government. All rights reserved.
-		</a>
+	<div class="content has-text-centered">
+		<p>
+			Copyright &copy; {today.getFullYear()} <strong>Samland Government</strong> by <a href="https://github.com/ajh123">Samuel Hulme</a>. The website content
+			is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+		</p>
 	</div>
 </footer>
-
