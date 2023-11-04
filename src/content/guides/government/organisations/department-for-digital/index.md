@@ -14,7 +14,7 @@ breadcrumbs: [
         href: "/government/organisations"
     },
     {
-        text: "Department for Digital",
+        text: "Department for Digital"
     }
 ]
 ---

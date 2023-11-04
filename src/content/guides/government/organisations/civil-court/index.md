@@ -14,7 +14,7 @@ breadcrumbs: [
         href: "/government/organisations"
     },
     {
-        text: "Samland Civil Court",
+        text: "Samland Civil Court"
     }
 ]
 ---
