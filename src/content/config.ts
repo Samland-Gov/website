@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference, z } from 'astro:content';
 
 const blog = defineCollection({
 	// Type-check frontmatter using a schema
@@ -26,5 +26,19 @@ const guides = defineCollection({
 	}),
 });
 
+const legislation = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		type: z.string(),
+		number: z.number(),
+		jurisdiction: z.string(),
+		date_published: z.coerce.date(),
+		date_assented: z.coerce.date().optional(),
+		repelled_by: reference('legislation').optional(),
+		date_repelled: z.coerce.date().optional(),
+		amended_by: reference('legislation').optional(),
+		date_amended: z.coerce.date().optional(),
+	}),
+});
 
-export const collections = { blog, guides };
+export const collections = { blog, guides, legislation };

@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const legislation = (await getCollection('legislation'));
+---
+
+<BaseLayout>
+	<section class="hero is-primary">
+		<div class="hero-body">
+			<p class="title">
+			The offical Samland legislation.
+			</p>
+			<p class="subtitle">
+			Stay updated about recent legislation.
+			</p>
+		</div>
+	</section>
+	<section class="section">
+		<ul>
+			{
+				legislation.map((law) => (
+					<li>
+						<hr>
+						<a href={`/legislation/${law.slug.split('/')[0]+"/"+law.data.type+"/"+law.data.jurisdiction+"/"+law.data.number}/`}>
+							<div class="columns">
+								<div class="column">
+									<h1 class="title">{law.data.title}</h1>
+									<h2 class="subtitle">
+										Type: {law.data.type} -
+										Date Published: <FormattedDate date={law.data.date_published}/>
+										{law.data.date_assented ?
+											<span>- Date Assented: <FormattedDate date={law.data.date_assented}/></span>
+											:
+											<span style="color:#ff9100">- This legislation has not been approved and is not currently in effect.</span>
+										}
+									</h2>
+								</div>
+							</div>
+						</a>
+						<hr>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</BaseLayout>

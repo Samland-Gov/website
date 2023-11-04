@@ -1,0 +1,26 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Legislation from '../../layouts/Legislation.astro';
+
+export async function getStaticPaths() {
+	const laws = await getCollection('legislation');
+	return laws.map((law) => {
+		let slug = law.slug.endsWith('index') ? law.slug.replace(/\/?index$/, '') : law.slug;
+		slug = slug.trim();
+		let year = slug.split('/')[0];
+		slug = year+"/"+law.data.type+"/"+law.data.jurisdiction+"/"+law.data.number;
+		return {
+			params: { slug: slug || undefined },
+			props: law,
+		};
+	});
+}
+type Props = CollectionEntry<'legislation'>;
+
+const law = Astro.props;
+const { Content } = await law.render();
+---
+
+<Legislation {...law.data}>
+	<Content/>
+</Legislation>

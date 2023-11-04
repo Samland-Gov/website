@@ -20,3 +20,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# symlink content
+/src/content/legislation/*
+!/src/content/legislation/.gitkeep

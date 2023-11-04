@@ -19,15 +19,11 @@ const { title, links, breadcrumbs} = Astro.props;
 	<section class="section">
 		<nav class="breadcrumb" aria-label="breadcrumbs">
 			<ul>
-				<!-- <li><a href="#">Bulma</a></li>
-				<li><a href="#">Documentation</a></li>
-				<li><a href="#">Components</a></li>
-				<li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li> -->
 				{
 					breadcrumbs.map((breadcrumb) => (
 					  <li class={breadcrumb.href ? '' : 'is-active'}>
 						{breadcrumb.href ? (
-						  <a href={breadcrumb.href}>{breadcrumb.text}</a>
+							<a href={breadcrumb.href}>{breadcrumb.text}</a>
 						) : (
 							<a href="#" aria-current="page">{breadcrumb.text}</a>
 						)}

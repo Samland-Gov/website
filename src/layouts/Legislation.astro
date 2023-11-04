@@ -1,0 +1,80 @@
+---
+import { type CollectionEntry, getEntry  } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import '../styles/global.scss';
+
+type Props = CollectionEntry<'legislation'>['data'];
+
+const {
+	title,
+	type,
+	number,
+	jurisdiction,
+	date_published,
+	date_amended,
+	repelled_by,
+	date_repelled,
+	amended_by,
+	date_assented,
+} = Astro.props;
+
+var repelled_by_slug = "";
+var repelled_by_name = "";
+if (repelled_by != undefined) {
+	let repelled = await getEntry('legislation', repelled_by.slug);
+	let year = repelled.slug.split('/')[0];
+	repelled_by_slug = year+"/"+repelled.data.type+"/"+repelled.data.jurisdiction+"/"+repelled.data.number;
+	repelled_by_name = repelled.data.title;
+}
+
+var amended_by_slug = "";
+var amended_by_name = "";
+if (amended_by != undefined) {
+	let amended = await getEntry('legislation', amended_by.slug);
+	let year = amended.slug.split('/')[0];
+	amended_by_slug = year+"/"+amended.data.type+"/"+amended.data.jurisdiction+"/"+amended.data.number;
+	amended_by_name = amended.data.title;
+}
+---
+
+<BaseLayout title={title} description={title}>
+	<section class="hero is-primary">
+		<div class="hero-body">
+			<h1 class="title">
+			{title}
+			</h1>
+		</div>
+	</section>
+	<section class="section">
+		{!date_assented &&
+			<blockquote class="callout" style="border-left: 5px solid hsl(0, 0%, 86%); border-left-color:#ff9100;">
+				<div class="callout-title warning" style="background-color: #ff91001a;"><span style="color:#ff9100" class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-alert-triangle"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span><strong>Warning</strong></div>
+				<div class="callout-content" style=""><p>This legislation has not been approved and is not currently in effect.</p></div>
+			</blockquote>}
+		{date_repelled &&
+			<blockquote class="callout" style="border-left: 5px solid hsl(0, 0%, 86%); border-left-color:#ff9100;">
+				<div class="callout-title warning" style="background-color: #ff91001a;"><span style="color:#ff9100" class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-alert-triangle"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span><strong>Warning</strong></div>
+				<div class="callout-content" style=""><p>This legislation has been repelled by <a href={"/legislation/"+repelled_by_slug}>{repelled_by_name}</a> and is not currently in effect.</p></div>
+			</blockquote>
+		}
+		{date_amended &&
+			<blockquote class="callout" style="border-left: 5px solid hsl(0, 0%, 86%); border-left-color:#ff9100;">
+				<div class="callout-title warning" style="background-color: #ff91001a;"><span style="color:#ff9100" class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-alert-triangle"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span><strong>Warning</strong></div>
+				<div class="callout-content" style=""><p>This legislation has been amended by <a href={"/legislation/"+amended_by_slug}>{amended_by_name}</a> and is not currently in effect.</p></div>
+			</blockquote>
+		}
+		<nav class="breadcrumb" aria-label="breadcrumbs">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/legislation">Legislation</a></li>
+				<li class="is-active"><a href="#" aria-current="page">{title}</a></li>  
+			</ul>
+		</nav>
+		<div class="columns">
+			<section class="column is-two-thirds content">
+				<h1>{title}</h1>
+				<slot/>
+			</section>
+		</div>
+	</section>
+</BaseLayout>
