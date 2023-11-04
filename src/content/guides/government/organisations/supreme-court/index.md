@@ -11,11 +11,11 @@ breadcrumbs: [
     },
     {
         text: "Organisations",
-        href: "/organisations"
+        href: "/government/organisations/organisations"
     },
     {
         text: "Samland Supreme Court",
-        href: "/supreme-court"
+        href: "/government/organisations/supreme-court"
     }
 ]
 ---
