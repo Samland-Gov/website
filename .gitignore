@@ -3,7 +3,7 @@ dist/
 # generated types / files
 .astro/
 .tmp/
-functions/[[path]].js
+functions/\[\[path\]\].js 
 
 # dependencies
 node_modules/
