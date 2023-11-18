@@ -3,7 +3,8 @@ dist/
 # generated types / files
 .astro/
 .tmp/
-functions/\[\[path\]\].js 
+functions/\[\[path\]\].js
+.wrangler
 
 # dependencies
 node_modules/
