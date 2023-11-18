@@ -1,6 +1,12 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include": ["src/**/*"],
+  "exclude": ["functions/**/*"],
   "compilerOptions": {
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "types": ["@cloudflare/workers-types"]
   }
 }
