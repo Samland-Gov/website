@@ -6,10 +6,10 @@ export async function GET(context) {
     };
     // const c = runtime.env;
 
-    // let data = await storage.list();
+    let data = await storage.list();
     return new Response(JSON.stringify({
             context: storage,
-            // storage: storage,
+            data: data,
             // keys: data.keys
         }), {
         status: 200,
