@@ -7,6 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "npm run build && wrangler pages dev ./dist",
+    "dev_preview": "nodemon --exec npm run preview -e js,ts,astro",
     "astro": "astro",
     "postinstall": "node post-install.js"
   },
@@ -23,7 +24,12 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231025.0",
+    "nodemon": "^3.0.1",
     "typescript": "^5.2.2",
     "wrangler": "^3.16.0"
+  },
+  "nodemonConfig": {
+    "ignore": ["dist/**"],
+    "delay": 2500
   }
 }

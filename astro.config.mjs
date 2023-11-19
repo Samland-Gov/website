@@ -26,6 +26,11 @@ export default defineConfig({
       preserveSymlinks: true
     }
   },
-  output: "server",
-  adapter: cloudflare({mode: "directory"})
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/noop',
+    },
+  },
+  output: 'server',
+  adapter: cloudflare(),
 });

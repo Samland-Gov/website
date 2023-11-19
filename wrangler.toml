@@ -1,0 +1,6 @@
+name = "samland-client"
+compatibility_date = "2023-11-18"
+
+kv_namespaces = [
+    { binding = "SAMLAND_USERS", id = "01b4cc87f25c4f7bba33503d8dd27126", preview_id = "01b4cc87f25c4f7bba33503d8dd27126" }
+]

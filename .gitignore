@@ -5,6 +5,7 @@ dist/
 .tmp/
 functions/\[\[path\]\].js
 .wrangler
+.vscode
 
 # dependencies
 node_modules/
