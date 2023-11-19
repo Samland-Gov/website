@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "npm run build && wrangler pages dev ./dist",
+    "preview": "npm run build && wrangler pages dev ./dist --compatibility-flags='nodejs_compat'",
     "dev_preview": "nodemon --exec npm run preview -e js,ts,astro",
     "astro": "astro",
     "postinstall": "node post-install.js"
@@ -16,20 +16,26 @@
     "@astrojs/mdx": "^0.19.7",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^2.0.2",
+    "@cfworker/uuid": "^1.12.4",
     "@noxify/gridsome-remark-classes": "^1.0.0",
+    "@tsndr/cloudflare-worker-jwt": "^2.3.2",
     "astro": "^3.4.3",
+    "bcryptjs": "^2.4.3",
     "bulma": "^0.9.4",
     "remark-callouts": "^2.0.0",
     "sass": "^1.68.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231025.0",
+    "@types/bcryptjs": "^2.4.6",
     "nodemon": "^3.0.1",
     "typescript": "^5.2.2",
     "wrangler": "^3.16.0"
   },
   "nodemonConfig": {
-    "ignore": ["dist/**"],
+    "ignore": [
+      "dist/**"
+    ],
     "delay": 2500
   }
 }

@@ -4,3 +4,9 @@ compatibility_date = "2023-11-18"
 kv_namespaces = [
     { binding = "SAMLAND_USERS", id = "01b4cc87f25c4f7bba33503d8dd27126", preview_id = "01b4cc87f25c4f7bba33503d8dd27126" }
 ]
+
+compatibility_flags = [ "nodejs_compat" ]
+
+[vars]
+ENCRYPTION_KEY = "$2a$12$iK8VuZV.d91RAEghIHyURe"
+AUTH_TOKEN_KEY = "demo"
