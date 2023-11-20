@@ -1,8 +1,8 @@
-POST https://potential-enigma-w9wxvxw77wvf5xp7-8788.app.github.dev/api/login HTTP/1.1
+POST http://127.0.0.1:8788/api/login HTTP/1.1
 
 ###
 
-POST https://potential-enigma-w9wxvxw77wvf5xp7-8788.app.github.dev/api/login HTTP/1.1
+POST http://127.0.0.1:8788/api/login HTTP/1.1
 content-type: application/json
 
 {
@@ -12,7 +12,7 @@ content-type: application/json
 
 ###
 
-POST https://potential-enigma-w9wxvxw77wvf5xp7-8788.app.github.dev/api/register HTTP/1.1
+POST http://127.0.0.1:8788/api/register HTTP/1.1
 content-type: application/json
 
 {

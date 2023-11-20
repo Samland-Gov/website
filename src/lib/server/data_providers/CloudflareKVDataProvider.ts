@@ -8,7 +8,7 @@ export default class CloudflareKVDataProvider<Resource extends { id: string, dat
     }
 
     public async createData(resource: Resource) {
-        await this.kvNamespace.put(resource.id, JSON.stringify(resource.data));
+        await this.kvNamespace.put(resource.id, btoa(JSON.stringify(resource.data)));
     }
 
     public async readData(args: { id: string, matchField: string }): Promise<Resource | undefined> {
@@ -18,7 +18,7 @@ export default class CloudflareKVDataProvider<Resource extends { id: string, dat
             const storedValue = await this.kvNamespace.get(key);
 
             if (storedValue) {
-                const data = JSON.parse(storedValue);
+                const data = JSON.parse(atob(storedValue));
 
                 if (data[args.matchField] === args.id) {
                     return { id: key, data } as Resource;
@@ -32,7 +32,7 @@ export default class CloudflareKVDataProvider<Resource extends { id: string, dat
 
     public async updateData(props: { id: string; resource: Resource; }) {
         const { id, resource } = props;
-        await this.kvNamespace.put(id, JSON.stringify(resource.data));
+        await this.kvNamespace.put(id, btoa(JSON.stringify(resource.data)));
     }
 
     public async deleteData(id: string) {
