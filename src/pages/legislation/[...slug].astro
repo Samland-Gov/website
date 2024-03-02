@@ -19,6 +19,7 @@ type Props = CollectionEntry<'legislation'>;
 
 const law = Astro.props;
 const { Content } = await law.render();
+export const prerender = true;
 ---
 
 <Legislation {...law.data}>

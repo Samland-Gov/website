@@ -1,0 +1,22 @@
+POST http://127.0.0.1:8788/api/login HTTP/1.1
+
+###
+
+POST http://127.0.0.1:8788/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "bob@example.com",
+    "password": "12234"
+}
+
+###
+
+POST http://127.0.0.1:8788/api/register HTTP/1.1
+content-type: application/json
+
+{
+    "full_name": "bob marley",
+    "email": "bob@example.com",
+    "password": "12234"
+}

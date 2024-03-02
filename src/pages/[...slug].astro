@@ -17,6 +17,7 @@ type Props = CollectionEntry<'guides'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+export const prerender = true;
 ---
 
 <MainstreamGuide {...post.data}>
