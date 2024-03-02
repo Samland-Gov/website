@@ -30,6 +30,7 @@ The Samland Government is structured into various government departments, agenci
 - [Department for Digital](/government/organisations/department-for-digital) - Focusing on digital innovation and government services.
 - [Samland Civil Court](/government/organisations/civil-court) - Administering justice and legal proceedings.
 - [Samland Supreme Court](/government/organisations/supreme-court) - Serving as the highest court of appeal.
+- [Electoral Commission](/government/organisations/electoral-commission) - Administering and conduct elections.
 - [Other Government Departments](/government/organisations)
 
 ## Contact Information
