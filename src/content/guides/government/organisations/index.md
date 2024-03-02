@@ -24,6 +24,7 @@ Welcome to the list of Samland Government organisations. Here are some of the ke
 3. [Samland Civil Court](/government/organisations/civil-court) - Ensuring justice and legal proceedings for the citizens of Samland.
 
 4. [Samland Supreme Court](/government/organisations/supreme-court) - The highest court of appeal, upholding justice and interpreting the law.
+5. [Electoral Commission](/government/organisations/electoral-commission) - Administering and conducting elections.
 
 Click on the links above to learn more about each organization and their respective roles in serving the people of Samland.
 
